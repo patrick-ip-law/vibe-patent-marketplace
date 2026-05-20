@@ -1,0 +1,13 @@
+{
+  "servers": {
+    "vibe-patent-mcp": {
+      "command": "node",
+      "args": ["./dist/mcp-server.js"],
+      "env": {
+        "SUPABASE_URL": "${SUPABASE_URL}",
+        "SUPABASE_ANON_KEY": "${SUPABASE_ANON_KEY}"
+      },
+      "transport": "stdio"
+    }
+  }
+}

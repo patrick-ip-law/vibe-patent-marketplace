@@ -1,0 +1,58 @@
+name: Validate marketplace
+
+on:
+  push:
+    paths:
+      - 'marketplaces/vibe-patent/**'
+  pull_request:
+    paths:
+      - 'marketplaces/vibe-patent/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate JSON files
+        run: |
+          set -e
+          fail=0
+          while IFS= read -r f; do
+            if ! python3 -c "import json,sys; json.load(open(sys.argv[1]))" "$f"; then
+              echo "::error file=$f::Invalid JSON"
+              fail=1
+            fi
+          done < <(find marketplaces/vibe-patent -type f \( -name '*.json' \))
+          exit $fail
+
+      - name: Validate SKILL.md frontmatter
+        run: |
+          python3 - <<'PY'
+          import os, sys, re
+          fail = False
+          for root, _, files in os.walk('marketplaces/vibe-patent'):
+              for fn in files:
+                  if fn != 'SKILL.md':
+                      continue
+                  p = os.path.join(root, fn)
+                  text = open(p).read()
+                  m = re.match(r'^---\n(.*?)\n---', text, re.S)
+                  if not m:
+                      print(f"::error file={p}::Missing YAML frontmatter")
+                      fail = True
+                      continue
+                  fm = m.group(1)
+                  for key in ('name:', 'description:', 'disable-model-invocation:'):
+                      if key not in fm:
+                          print(f"::error file={p}::Missing '{key}' in frontmatter")
+                          fail = True
+          sys.exit(1 if fail else 0)
+          PY
+
+      - name: Secret sweep
+        run: |
+          if grep -RIEn 'vp_live_[A-Za-z0-9]+|sk_live_[A-Za-z0-9]+|service_role' marketplaces/vibe-patent; then
+            echo "::error::Potential secret committed"
+            exit 1
+          fi

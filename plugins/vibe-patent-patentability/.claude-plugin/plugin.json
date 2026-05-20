@@ -1,0 +1,15 @@
+{
+  "name": "vibe-patent-patentability",
+  "version": "1.0.0-rc.1",
+  "description": "Runs §101 eligibility, prior-art search, differences analysis, and §103 obviousness assessment against a Vibe Patent disclosure. Applicable to both U.S. provisional and non-provisional utility patent preparation. All outputs labeled 'DRAFT – FOR ATTORNEY REVIEW ONLY'.",
+  "longDescription": "Currently supports the full workflow for U.S. provisional patent applications to establish patent pending status, including disclosure intake, patentability analysis, specification drafting, attorney review, and filing request. The disclosure intake and patentability analysis tools are also applicable to non-provisional, utility patent applications. All outputs are preliminary AI-generated drafts ready for review, analysis, or filing by a registered patent practitioner.",
+  "author": {
+    "name": "Patrick IP Law",
+    "url": "https://vibepatent.ai",
+    "email": "support@vibepatent.ai"
+  },
+  "homepage": "https://vibepatent.ai",
+  "privacy": "https://vibepatent.ai/privacy",
+  "terms": "https://vibepatent.ai/terms",
+  "license": "Proprietary"
+}

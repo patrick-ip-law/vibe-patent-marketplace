@@ -1,0 +1,15 @@
+{
+  "name": "vibe-patent-code-bridge",
+  "version": "1.0.0-rc.1",
+  "description": "Summarizes the current code repository into a draft invention disclosure suitable for the Vibe Patent intake skill. Output is a draft for registered patent practitioner review.",
+  "longDescription": "Currently supports the full workflow for U.S. provisional patent applications to establish patent pending status, including disclosure intake, patentability analysis, specification drafting, attorney review, and filing request. The disclosure intake and patentability analysis tools are also applicable to non-provisional, utility patent applications. All outputs are preliminary AI-generated drafts ready for review, analysis, or filing by a registered patent practitioner.",
+  "author": {
+    "name": "Patrick IP Law",
+    "url": "https://vibepatent.ai",
+    "email": "support@vibepatent.ai"
+  },
+  "homepage": "https://vibepatent.ai",
+  "privacy": "https://vibepatent.ai/privacy",
+  "terms": "https://vibepatent.ai/terms",
+  "license": "Proprietary"
+}

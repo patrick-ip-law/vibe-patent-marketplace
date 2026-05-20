@@ -1,0 +1,15 @@
+{
+  "name": "vibe-patent-drafting",
+  "version": "1.0.0-rc.1",
+  "description": "Generates a USPTO-formatted Background and 5-part Detailed Description for U.S. provisional patent applications from a Vibe Patent disclosure. Supports an optional output_mode (sections | compiled | both) for streamed or integrated delivery. All outputs labeled 'DRAFT – FOR ATTORNEY REVIEW ONLY'.",
+  "longDescription": "Currently supports the full workflow for U.S. provisional patent applications to establish patent pending status, including disclosure intake, patentability analysis, specification drafting, attorney review, and filing request. The disclosure intake and patentability analysis tools are also applicable to non-provisional, utility patent applications. All outputs are preliminary AI-generated drafts ready for review, analysis, or filing by a registered patent practitioner. This skill exposes an optional `output_mode` parameter (`sections` | `compiled` | `both`, default `both`) controlling whether per-section drafts stream as they are generated, a single fully-integrated document is returned at the end, or both.",
+  "author": {
+    "name": "Patrick IP Law",
+    "url": "https://vibepatent.ai",
+    "email": "support@vibepatent.ai"
+  },
+  "homepage": "https://vibepatent.ai",
+  "privacy": "https://vibepatent.ai/privacy",
+  "terms": "https://vibepatent.ai/terms",
+  "license": "Proprietary"
+}

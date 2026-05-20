@@ -1,0 +1,70 @@
+{
+  "name": "vibe-patent",
+  "version": "1.0.0-rc.1",
+  "description": "AI-powered tools for U.S. provisional patent applications to establish patent pending status. Disclosure intake and patentability analysis also support non-provisional, utility patent application preparation. All outputs are drafts for registered patent practitioner review.",
+  "longDescription": "Currently supports the full workflow for U.S. provisional patent applications to establish patent pending status, including disclosure intake, patentability analysis, specification drafting, attorney review, and filing request. The disclosure intake and patentability analysis tools are also applicable to non-provisional, utility patent applications. All outputs are preliminary AI-generated drafts ready for review, analysis, or filing by a registered patent practitioner.",
+  "category": "legal",
+  "tags": ["patent", "ip-law", "invention-disclosure", "uspto", "provisional", "patrick-ip-law", "drafting", "prior-art", "attorney-review"],
+  "owner": {
+    "name": "Patrick IP Law",
+    "url": "https://vibepatent.ai",
+    "email": "support@vibepatent.ai"
+  },
+  "metadata": {
+    "pluginRoot": "./plugins",
+    "homepage": "https://vibepatent.ai",
+    "privacy": "https://vibepatent.ai/privacy",
+    "terms": "https://vibepatent.ai/terms"
+  },
+  "plugins": [
+    {
+      "name": "vibe-patent-core",
+      "source": "./plugins/vibe-patent-core",
+      "description": "End-to-end Vibe Patent toolkit for U.S. provisional patent applications: invention intake, patentability analysis, specification drafting (with selectable output_mode), attorney review, and filing request. All outputs labeled 'Draft – For Attorney Review Only'.",
+      "strict": false,
+      "version": "1.0.0-rc.1",
+      "category": "legal",
+      "tags": ["legal", "patent", "uspto", "ip", "end-to-end"]
+    },
+    {
+      "name": "vibe-patent-intake",
+      "source": "./plugins/vibe-patent-intake",
+      "description": "Structured invention intake for U.S. provisional or non-provisional utility patent applications. Captures title, problem, operation, variations, and applications into a Vibe Patent disclosure record. Output is a draft for registered patent practitioner review.",
+      "version": "1.0.0-rc.1",
+      "category": "legal",
+      "tags": ["legal", "patent", "intake", "disclosure"]
+    },
+    {
+      "name": "vibe-patent-patentability",
+      "source": "./plugins/vibe-patent-patentability",
+      "description": "Runs §101 eligibility, prior-art search, differences analysis, and §103 obviousness assessment against a Vibe Patent disclosure. Applicable to both U.S. provisional and non-provisional utility patent preparation. All outputs labeled 'Draft – For Attorney Review Only'.",
+      "version": "1.0.0-rc.1",
+      "category": "legal",
+      "tags": ["legal", "patent", "patentability", "prior-art", "section-101", "section-103"]
+    },
+    {
+      "name": "vibe-patent-drafting",
+      "source": "./plugins/vibe-patent-drafting",
+      "description": "Generates a USPTO-formatted Background and 5-part Detailed Description for U.S. provisional patent applications. Supports output_mode (sections | compiled | both) for streamed or integrated delivery. All outputs labeled 'Draft – For Attorney Review Only'.",
+      "version": "1.0.0-rc.1",
+      "category": "legal",
+      "tags": ["legal", "patent", "drafting", "specification", "uspto"]
+    },
+    {
+      "name": "vibe-patent-filing",
+      "source": "./plugins/vibe-patent-filing",
+      "description": "Submits a completed disclosure to Patrick IP Law for limited-scope attorney review and U.S. USPTO provisional filing preparation. Payment authorization happens externally on vibepatent.ai. This skill does not process payments.",
+      "version": "1.0.0-rc.1",
+      "category": "legal",
+      "tags": ["legal", "patent", "filing", "uspto", "attorney-review", "provisional"]
+    },
+    {
+      "name": "vibe-patent-code-bridge",
+      "source": "./plugins/vibe-patent-code-bridge",
+      "description": "Summarizes the current code repository into a draft invention disclosure suitable for the Vibe Patent intake skill. Output is a draft for registered patent practitioner review.",
+      "version": "1.0.0-rc.1",
+      "category": "legal",
+      "tags": ["legal", "patent", "code", "claude-code", "disclosure"]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+.DS_Store
+*.log
+node_modules/
+dist/
+
+# Secrets - never commit
+.env
+.env.*
+*.key
+*.pem
+secrets.json
+
+# Vibe Patent / Stripe / Supabase live credentials
+**/vp_live_*
+**/sk_live_*
+**/service_role*
